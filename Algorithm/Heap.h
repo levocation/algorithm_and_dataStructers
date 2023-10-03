@@ -100,7 +100,6 @@ public:
 	}
 	Heap(std::function<bool(int, int)> func) {
 		// 우선순위의 기준을 함수를 통해서 정의할 수 있도록 설정
-		// 우선순위의 기준을 함수를 통해서 정의할 수 있도록 설정
 
 		arr.emplace_back(0);
 		this->func = func;
