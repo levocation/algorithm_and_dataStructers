@@ -3,6 +3,7 @@
 #include <string>
 
 template<typename T>
+// 가변 길이 배열 (ArrayList)
 class DynamicArray {
 public:
 	int size = 0;

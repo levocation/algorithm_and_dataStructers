@@ -1,25 +1,33 @@
 #include <iostream>
 #include <string>
-#include "DynamicArray.h"
+#include "Heap.h"
+
+using namespace std;
+
+bool func(int a, int b) {
+	return a < b;
+}
 
 int main() {
+	// 자료구조 또는 알고리즘을 테스트하는 공간
 
-	DynamicArray<int> arr = DynamicArray<int>(5);
+	Heap test_heap = Heap(func);
 
-	arr.add(1);
-	arr.add(2);
-	arr.add(3);
-	arr.add(4);
-	arr.add(5);
-	arr.add(6);
+	test_heap.push(1);
+	test_heap.push(2);
+	test_heap.push(3);
+	test_heap.push(5);
+	test_heap.push(6);
+	test_heap.push(7);
+	test_heap.push(4);
 
-	arr.remove(6);
-	arr.remove(5);
-	arr.remove(4);
-
-	arr.print();
-	std::cout << "\nsize : " << arr.size << "\n";
-	std::cout << "capacity : " << arr.capacity << "\n";
+	for (int i = 0; i < test_heap.size();) {
+		printf("%d회전\n", i + 1);
+		printf("가장 우선순위가 높은 값 : %d\n", test_heap.max());
+		printf("크기 : %d\n", test_heap.size());
+		test_heap.pop();
+		printf("---------------\n");
+	}
 
 	return 0;
 }
